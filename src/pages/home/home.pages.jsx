@@ -1,7 +1,11 @@
-import React from "react";
+import "./home.styles.css";
 
 const HomePages = () => {
-  return <div>HomePages</div>;
+  return (
+    <div className="home base-class">
+      Homepage
+    </div>
+  );
 };
 
 export default HomePages;

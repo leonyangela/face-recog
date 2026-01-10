@@ -1,0 +1,5 @@
+@reference "tailwindcss";
+
+.home {
+  @apply p-4;
+}
