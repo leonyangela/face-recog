@@ -1,0 +1,13 @@
+@reference "tailwindcss";
+
+.signup {
+  @apply w-full h-full flex flex-col justify-center items-center;
+}
+
+.signup__formGroup {
+  @apply w-3/4 pt-8;
+}
+
+.signup__errorMessage {
+  @apply h-7 text-red-500 text-sm italic;
+}

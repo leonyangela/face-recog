@@ -7,3 +7,7 @@
 .signin__formGroup {
   @apply text-center pt-4 w-3/4;
 }
+
+.signin__errorMessage {
+  @apply text-red-500 text-sm text-left italic;
+}
