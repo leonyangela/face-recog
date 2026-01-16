@@ -6,6 +6,7 @@ import LoginPages from "./pages/login/login.pages";
 
 import ProtectedRoute from "./components/auth/protected-routes.component";
 import PublicRoutes from "./components/auth/public-routes.component";
+import FaceDetectionPages from "./pages/face-detection/face-detection.pages";
 
 function App() {
   return (
@@ -41,6 +42,15 @@ function App() {
           <PublicRoutes>
             <LoginPages />
           </PublicRoutes>
+        }
+      />
+
+      <Route
+        path="/face-detection"
+        element={
+          <ProtectedRoute>
+            <FaceDetectionPages />
+          </ProtectedRoute>
         }
       />
     </Routes>

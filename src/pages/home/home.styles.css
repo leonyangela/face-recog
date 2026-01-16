@@ -4,6 +4,18 @@
   @apply relative min-h-screen h-auto w-full;
 }
 
-.home__container {
-  @apply p-4 relative box-border w-full flex justify-center items-center flex-col;
+.home-container {
+  @apply relative box-border w-full h-full flex flex-row justify-start items-center;
+}
+
+.home-sidebar {
+  @apply w-1/5 h-full;
+}
+
+.home-content {
+  @apply w-4/5 h-full flex justify-center items-center;
+}
+
+.text {
+  @apply text-3xl font-bold text-center; 
 }

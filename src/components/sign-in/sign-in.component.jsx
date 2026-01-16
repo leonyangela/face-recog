@@ -7,8 +7,11 @@ import {
   signInWithEmailAndPass,
 } from "../../utils/firebase/firebase.utils";
 
-import SubmitBtn from "../button/submit-btn/submit-btn.component";
 import { useAuthStore } from "../../store";
+
+import SubmitBtn from "../button/submit-btn/submit-btn.component";
+
+import GoogleIcon from '@mui/icons-material/Google';
 
 const defaultSignInForm = {
   email: "",
@@ -164,10 +167,10 @@ const SignInComponent = () => {
       </div>
       <p className="text-center py-4">or</p>
       <div
-        className="border px-2 py-1 rounded-md global-cursor-pointer global-transition-all hover:border-accent w-3/4 mx-auto text-center"
+        className="border px-2 py-1 rounded-md global-cursor-pointer global-transition-all hover:border-accent w-3/4 mx-auto text-center flex justify-center items-center"
         onClick={logGoogleUser}
       >
-        Sign in With Google Popup
+        <GoogleIcon className="pr-1" />Sign in With Google
       </div>
       <div className="py-4 w-3/4">
         <p className="text-center pt-2">

@@ -1,0 +1,13 @@
+@reference "tailwindcss";
+
+.navbar {
+  @apply sticky top-0 left-0 box-border pl-4 p-2 flex justify-between gap-4 shadow-md;
+}
+
+.navigation {
+  @apply flex flex-row items-center justify-center gap-4;
+}
+
+.navigation .auth-btn {
+  @apply text-base p-1 px-4 rounded-lg;
+}

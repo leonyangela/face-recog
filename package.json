@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mui/icons-material": "^7.3.7",
+    "@mui/material": "^7.3.7",
     "@tailwindcss/vite": "^4.1.18",
     "clarifai": "^2.9.1",
     "firebase": "^12.7.0",

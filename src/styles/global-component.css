@@ -1,7 +1,11 @@
 /* This is the Global Class that can be used in other class globally */
 @layer components {
   .base-class {
-    @apply relative box-border w-full h-auto;
+    @apply relative box-border w-full h-auto max-w-480 mx-auto;
+  }
+
+  .base-content {
+    @apply relative h-full w-full overflow-auto p-10;
   }
 
   .flex-row {
@@ -22,5 +26,9 @@
 
   .global-btn {
     @apply w-full rounded-sm bg-primary text-white px-4 text-center py-1 mx-auto hover:bg-accent;
+  }
+
+  .logo {
+    @apply flex justify-start items-center gap-1 text-base font-black py-2;
   }
 }

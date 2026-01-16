@@ -9,5 +9,5 @@
 }
 
 .signup__errorMessage {
-  @apply h-7 text-red-500 text-sm italic;
+  @apply text-red-500 text-sm italic;
 }

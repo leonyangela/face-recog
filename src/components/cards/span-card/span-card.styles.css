@@ -1,0 +1,13 @@
+@reference "tailwindcss";
+
+.span-card-item {
+  @apply rounded-md p-4 shadow-md;
+}
+
+.span-card-step {
+  @apply text-base font-bold;
+}
+
+.span-card-text {
+  @apply text-base;
+}

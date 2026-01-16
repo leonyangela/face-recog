@@ -6,6 +6,7 @@ import SignInComponent from "../../components/sign-in/sign-in.component";
 
 import LoginImage from "../../assets/images/login-image.jpg";
 import SignUpComponent from "../../components/sign-up/sign-up.component";
+import Logo from "../../components/logo/logo.component";
 
 const LoginPages = () => {
   const location = useLocation();
@@ -23,7 +24,7 @@ const LoginPages = () => {
         style={{ backgroundImage: `url(${LoginImage})` }}
       ></div>
       <div className="login__loginContainer ">
-        <h1 className="text-2xl font-black py-2">Logo</h1>
+        <Logo />
 
         <div className="overflow-hidden grow">
           {isSignUp ? <SignUpComponent /> : <SignInComponent />}

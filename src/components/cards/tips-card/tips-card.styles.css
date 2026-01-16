@@ -1,0 +1,13 @@
+@reference "tailwindcss";
+
+.tips-card {
+  @apply mt-2 rounded-md bg-blue-100 h-auto w-full p-4 border-2 border-blue-300;
+}
+
+.tips-card-title {
+  @apply text-sm font-bold;
+}
+
+.tips-card-list {
+  @apply text-sm list-disc list-inside;
+}

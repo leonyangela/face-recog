@@ -1,0 +1,33 @@
+@reference "tailwindcss";
+
+.face-detection-container {
+  @apply relative box-border w-full h-full flex flex-row justify-start items-center;
+}
+
+.face-detection-sidebar {
+  @apply w-1/5 h-full;
+}
+
+.face-detection-content {
+  @apply w-4/5 h-full;
+}
+
+.explanation-card {
+  @apply relative px-4 py-6 rounded-md shadow-sm text-white bg-no-repeat bg-center bg-cover;
+}
+
+.explanation-card-overlay {
+  @apply bg-black w-full h-full rounded-md overflow-hidden absolute top-0 left-0 opacity-40 z-10;
+}
+
+.title {
+  @apply relative z-20 text-3xl font-bold text-left;
+}
+
+.subtitle {
+  @apply relative z-20 text-base;
+}
+
+.how-it-works {
+  @apply grid grid-cols-3 gap-4 mb-10;
+}

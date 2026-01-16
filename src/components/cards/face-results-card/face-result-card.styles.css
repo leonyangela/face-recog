@@ -1,0 +1,17 @@
+@reference "tailwindcss";
+
+.result {
+  @apply rounded-lg w-full h-full flex justify-center items-center shadow-md relative overflow-hidden;
+}
+
+.result-img {
+  @apply w-full h-full object-contain overflow-hidden;
+}
+
+.result-bounding-box {
+  @apply absolute border-2 border-blue-400;
+}
+
+.result-empty-placeholder {
+  @apply text-gray-400 text-sm text-center  rounded-lg;
+}

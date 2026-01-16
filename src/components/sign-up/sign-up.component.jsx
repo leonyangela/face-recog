@@ -126,9 +126,9 @@ const SignUpComponent = () => {
 
   return (
     <div className="signup">
-      <h1 className="text-3xl font-black text-center">Login</h1>
+      <h1 className="text-3xl font-black text-center">Sign up</h1>
       <p className="text-center text-base">
-        Signup to use the face recognition app.
+        Sign up to use the Face Recognition app.
       </p>
 
       <div className="signup__formGroup">
@@ -146,7 +146,7 @@ const SignUpComponent = () => {
 
           <p className="signup__errorMessage">{errorMessage?.displayName}</p>
         </div>
-        <div>
+        <div className="py-2">
           <label>Email</label>
           <input
             type="email"
@@ -173,7 +173,7 @@ const SignUpComponent = () => {
           />
           <p className="signup__errorMessage">{errorMessage?.password}</p>
         </div>
-        <div>
+        <div className="py-2">
           <label>Confirm Password</label>
           <input
             type="password"
@@ -190,6 +190,15 @@ const SignUpComponent = () => {
         </div>
         <SubmitBtn text="Submit" className="mt-4" onClick={handleSubmit} />
       </div>
+      <p className="text-center pt-2">
+        Already have an account?{" "}
+        <span
+          className="global-cursor-pointer global-transition-all hover:text-accent underline font-bold "
+          onClick={() => navigate("/sign-in")}
+        >
+          sign in
+        </span>
+      </p>
     </div>
   );
 };

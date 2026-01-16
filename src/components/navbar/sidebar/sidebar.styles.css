@@ -1,0 +1,14 @@
+@reference "tailwindcss";
+
+.sidebar {
+  /* border-r border border-t-0 */
+  @apply w-full shadow-md h-full p-4;
+}
+
+.item {
+  @apply flex items-center gap-1 py-1 px-2 rounded-md hover:border hover:border-blue-600 hover:text-blue-600 duration-75! mb-2 border border-transparent;
+}
+
+.item--active {
+  @apply border-blue-600 text-blue-600;
+}

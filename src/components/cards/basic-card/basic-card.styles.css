@@ -1,0 +1,13 @@
+@reference "tailwindcss";
+
+.basic-card-item {
+  @apply rounded-md p-4 shadow-md;
+}
+
+.basic-card-step {
+  @apply text-base font-bold;
+}
+
+.basic-card-text {
+  @apply text-base;
+}
