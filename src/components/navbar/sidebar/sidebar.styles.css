@@ -2,7 +2,7 @@
 
 .sidebar {
   /* border-r border border-t-0 */
-  @apply w-full shadow-md h-full p-4;
+  @apply w-full shadow-md h-full p-4 hidden xl:block;
 }
 
 .item {

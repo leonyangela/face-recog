@@ -1,15 +1,15 @@
 @reference "tailwindcss";
 
 .face-detection-container {
-  @apply relative box-border w-full h-full flex flex-row justify-start items-center;
+  @apply relative box-border w-full h-full flex flex-row justify-start items-stretch;
 }
 
 .face-detection-sidebar {
-  @apply w-1/5 h-full;
+  @apply hidden xl:block w-1/5 h-auto bg-white;
 }
 
 .face-detection-content {
-  @apply w-4/5 h-full;
+  @apply w-full xl:w-4/5 h-full relative;
 }
 
 .explanation-card {
@@ -29,5 +29,5 @@
 }
 
 .how-it-works {
-  @apply grid grid-cols-3 gap-4 mb-10;
+  @apply grid grid-cols-1 xl:grid-cols-3 gap-4 mb-10;
 }

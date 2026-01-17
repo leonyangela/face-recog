@@ -1,7 +1,7 @@
 @reference "tailwindcss";
 
 .result {
-  @apply rounded-lg w-full h-full flex justify-center items-center shadow-md relative overflow-hidden;
+  @apply rounded-lg w-full h-full  flex justify-center items-center shadow-md relative overflow-hidden;
 }
 
 .result-img {

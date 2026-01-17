@@ -555,11 +555,20 @@ const FaceDetectionCard = () => {
           setIsLoading(false);
           setFaceResult(data.outputs[0].data.regions);
         })
-        .catch((err) => console.error(err));
+        .catch((err) => {
+          setIsLoading(false);
+          setIsAlert(true);
+          if (err.message == "Failed to fetch") {
+            setIsAlertText(`We couldn’t reach our servers. Please try again in a moment.`);
+          } else {
+            setIsAlertText(`Unexpected error occurred. Something went wrong: ${err.message}`);
+          }
+          console.error(err);
+        });
     } else {
       setIsAlert(true);
       setIsAlertText(
-        "Paste an image URL or choose an example image to get started."
+        "Paste an image URL or choose an example image to get started.",
       );
     }
   };

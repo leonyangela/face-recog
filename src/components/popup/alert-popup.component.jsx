@@ -11,8 +11,8 @@ const AlertPopupComponent = ({ popupText }) => {
   };
 
   return (
-    <div className="w-screen h-screen flex justify-center items-center">
-      <div className="absolute bg-black w-full h-full opacity-60 z-10"></div>
+    <div className="w-screen h-screen flex justify-center items-center relative overflow-hidden ">
+      <div className="absolute bg-black w-screen h-screen opacity-60 z-10"></div>
       <div className="w-fit h-fit bg-white rounded-md z-20">
         <div onClick={handleClick} className="text-right p-1 global-cursor-pointer pointer-events-auto">
           <CloseOutlinedIcon />

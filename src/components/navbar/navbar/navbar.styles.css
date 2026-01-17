@@ -1,7 +1,7 @@
 @reference "tailwindcss";
 
 .navbar {
-  @apply sticky top-0 left-0 box-border pl-4 p-2 flex justify-between gap-4 shadow-md;
+  @apply xl:sticky top-0 left-0 box-border pl-4 p-2 flex flex-row items-center justify-between gap-4 shadow-md z-50 relative px-4 bg-white;
 }
 
 .navigation {

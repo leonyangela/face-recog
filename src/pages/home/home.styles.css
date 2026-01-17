@@ -9,11 +9,11 @@
 }
 
 .home-sidebar {
-  @apply w-1/5 h-full;
+  @apply hidden xl:block w-1/5 h-full;
 }
 
 .home-content {
-  @apply w-4/5 h-full flex justify-center items-center;
+  @apply w-full xl:w-4/5 h-full flex justify-center items-center relative;
 }
 
 .text {

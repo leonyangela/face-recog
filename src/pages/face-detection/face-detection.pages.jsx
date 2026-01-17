@@ -1,6 +1,6 @@
 import "./face-detection.styles.css";
 import { useFaceDetectionStore } from "../../store/face-detection.store.js";
-import useNavbarHeight from "../../hooks/navbar-height.jsx";
+// import useNavbarHeight from "../../hooks/navbar-height.jsx";
 
 import Navbar from "../../components/navbar/navbar/navbar.component";
 import Sidebar from "../../components/navbar/sidebar/sidebar.component.jsx";
@@ -13,7 +13,7 @@ import AlertPopupComponent from "../../components/popup/alert-popup.component.js
 import LoadingPopupComponent from "../../components/popup/loading-popup.component.jsx";
 
 const FaceDetectionPages = () => {
-  const [navbarRef, navbarHeight] = useNavbarHeight();
+  // const [navbarRef, navbarHeight] = useNavbarHeight();
 
   const isLoading = useFaceDetectionStore((state) => state.isLoading);
   const isAlert = useFaceDetectionStore((state) => state.isAlert);
@@ -58,11 +58,11 @@ const FaceDetectionPages = () => {
   return (
     <>
       <div className="face-detection base-class">
-        <Navbar ref={navbarRef} />
+        <Navbar />
 
         <div
           className={`face-detection-container`}
-          style={{ height: `calc(100vh - ${navbarHeight}px)` }}
+          // style={{ height: `calc(100vh - ${navbarHeight}px)` }}
         >
           <div className="face-detection-sidebar">
             <Sidebar />
@@ -119,10 +119,10 @@ const FaceDetectionPages = () => {
           </div>
         </div>
       </div>
-      <div className="absolute top-0 left-0 pointer-events-none z-20">
+      <div className="fixed top-0 left-0 pointer-events-none w-screen h-screen overflow-hidden z-50">
         {isLoading && <LoadingPopupComponent />}
       </div>
-      <div className="absolute top-0 left-0 pointer-events-none z-20">
+      <div className="fixed top-0 left-0 pointer-events-none w-screen h-screen overflow-hidden z-50">
         {isAlert && <AlertPopupComponent popupText={isAlertText} />}
       </div>
     </>
