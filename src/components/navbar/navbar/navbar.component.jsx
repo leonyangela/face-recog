@@ -57,15 +57,18 @@ const Navbar = forwardRef((props, ref) => {
         </div>
 
         {/* Mobile hamburger */}
-        <button className="lg:hidden p-2" onClick={() => setOpen((v) => !v)}>
+        <button
+          className="global-cursor-pointer lg:hidden p-2"
+          onClick={() => setOpen((v) => !v)}
+        >
           {open ? <CloseIcon /> : <MenuIcon />}
         </button>
       </div>
 
       {/* MOBILE MENU */}
       {/* {open && ( */}
-        <div
-          className={`
+      <div
+        className={`
             absolute top-full left-0 w-full
             bg-white shadow-md
             flex flex-col
@@ -78,38 +81,38 @@ const Navbar = forwardRef((props, ref) => {
                 : "opacity-0 -translate-y-2 pointer-events-none"
             }
           `}
-        >
-          {/* Welcome */}
-          <div className="px-4 py-3 text-base">
-            Welcome, {isLoggedIn ? displayName : "-"}!
-          </div>
-
-          <button
-            onClick={() => goTo("/")}
-            className="flex items-center gap-2 px-4 py-3 text-left hover:bg-gray-100"
-          >
-            <HomeOutlinedIcon fontSize="small" />
-            Homepage
-          </button>
-
-          <button
-            onClick={() => goTo("/face-detection")}
-            className="flex items-center gap-2 px-4 py-3 text-left hover:bg-gray-100 "
-          >
-            <FullscreenOutlinedIcon fontSize="small" />
-            Face Detection
-          </button>
-
-          {isLoggedIn && (
-            <button
-              onClick={handleLogout}
-              className="px-4 py-3 text-left text-red-600 hover:bg-gray-100 flex items-center gap-2"
-            >
-              <LogoutIcon fontSize="small" />
-              Log out
-            </button>
-          )}
+      >
+        {/* Welcome */}
+        <div className="px-4 py-3 text-base">
+          Welcome, {isLoggedIn ? displayName : "-"}!
         </div>
+
+        <button
+          onClick={() => goTo("/")}
+          className="flex items-center gap-2 px-4 py-3 text-left hover:bg-gray-100 global-cursor-pointer"
+        >
+          <HomeOutlinedIcon fontSize="small" />
+          Homepage
+        </button>
+
+        <button
+          onClick={() => goTo("/face-detection")}
+          className="flex items-center gap-2 px-4 py-3 text-left hover:bg-gray-100 global-cursor-pointer"
+        >
+          <FullscreenOutlinedIcon fontSize="small" />
+          Face Detection
+        </button>
+
+        {isLoggedIn && (
+          <button
+            onClick={handleLogout}
+            className="px-4 py-3 text-left text-red-600 hover:bg-gray-100 flex items-center gap-2 global-cursor-pointer"
+          >
+            <LogoutIcon fontSize="small" />
+            Log out
+          </button>
+        )}
+      </div>
       {/* )} */}
     </div>
   );

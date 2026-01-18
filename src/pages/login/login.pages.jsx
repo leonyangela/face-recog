@@ -7,6 +7,7 @@ import SignInComponent from "../../components/sign-in/sign-in.component";
 import LoginImage from "../../assets/images/login-image.jpg";
 import SignUpComponent from "../../components/sign-up/sign-up.component";
 import Logo from "../../components/logo/logo.component";
+import BuildByComponent from "../../components/text/built-by.component";
 
 const LoginPages = () => {
   const location = useLocation();
@@ -30,7 +31,9 @@ const LoginPages = () => {
           {isSignUp ? <SignUpComponent /> : <SignInComponent />}
         </div>
 
-        <h1 className="text-sm py-1">Built by Leoni Angela</h1>
+        <div>
+          <BuildByComponent />
+        </div>
       </div>
     </div>
   );

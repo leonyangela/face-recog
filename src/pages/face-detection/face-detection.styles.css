@@ -5,11 +5,11 @@
 }
 
 .face-detection-sidebar {
-  @apply hidden xl:block w-1/5 h-auto bg-white;
+  @apply hidden xl:block w-1/5 h-full bg-white fixed;
 }
 
 .face-detection-content {
-  @apply w-full xl:w-4/5 h-full relative;
+  @apply w-full xl:w-4/5 h-full relative left-0 xl:left-1/5;
 }
 
 .explanation-card {

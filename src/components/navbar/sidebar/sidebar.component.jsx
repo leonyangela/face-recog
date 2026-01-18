@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from "react-router";
 
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import FullscreenIcon from "@mui/icons-material/Fullscreen";
+import BuildByComponent from "../../text/built-by.component";
 
 const menu = [
   { label: "Homepage", path: "/", icon: <HomeOutlinedIcon /> },
@@ -28,18 +29,24 @@ const Sidebar = forwardRef((props, ref) => {
 
   return (
     <div className="sidebar" ref={ref}>
-      {menu.map(({ label, path, icon }) => (
-        <div
-          key={path}
-          className={`global-transition-all global-cursor-pointer item ${
-            isActive(path) ? "item--active" : ""
-          }`}
-          onClick={() => handleClick(path)}
-        >
-          {icon}
-          {label}
-        </div>
-      ))}
+      <div className="grow">
+        {menu.map(({ label, path, icon }) => (
+          <div
+            key={path}
+            className={`global-transition-all global-cursor-pointer item ${
+              isActive(path) ? "item--active" : ""
+            }`}
+            onClick={() => handleClick(path)}
+          >
+            {icon}
+            {label}
+          </div>
+        ))}
+      </div>
+      
+      <div>
+        <BuildByComponent />
+      </div>
     </div>
   );
 });
