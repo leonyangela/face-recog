@@ -3,7 +3,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router";
 import {
   signInWithGooglePopup,
-  createUserDocFromAuth,
   signInWithEmailAndPass,
 } from "../../utils/firebase/firebase.utils";
 
@@ -32,7 +31,7 @@ const SignInComponent = () => {
 
   const logGoogleUser = async () => {
     const { user } = await signInWithGooglePopup();
-    const userDocRef = await createUserDocFromAuth(user);
+    // const userDocRef = await createUserDocFromAuth(user);
 
     setUser({
       uid: user.uid,
@@ -43,7 +42,7 @@ const SignInComponent = () => {
     navigate("/");
   };
 
-  const validateField = (name, value, formFields) => {
+  const validateField = (name, value) => {
     let error = "";
 
     switch (name) {
