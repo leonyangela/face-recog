@@ -9,6 +9,7 @@ export default defineConfig({
     include: [
       '@emotion/react',
       '@emotion/styled',
+      '@emotion/cache'
     ],
   },
 });
