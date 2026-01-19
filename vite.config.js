@@ -5,11 +5,11 @@ import tailwindcss from "@tailwindcss/vite";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  optimizeDeps: {
-    include: [
-      '@emotion/react',
-      '@emotion/styled',
-      '@emotion/cache'
-    ],
-  },
+  // optimizeDeps: {
+  //   include: [
+  //     '@emotion/react',
+  //     '@emotion/styled',
+  //     '@emotion/cache'
+  //   ],
+  // },
 });
