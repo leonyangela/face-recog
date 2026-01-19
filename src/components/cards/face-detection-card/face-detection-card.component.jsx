@@ -9,6 +9,7 @@ import FaceResultCard from "../face-results-card/face-result-card.component";
 import ImageOutlinedIcon from "@mui/icons-material/ImageOutlined";
 import FullscreenOutlinedIcon from "@mui/icons-material/FullscreenOutlined";
 import ReplayOutlinedIcon from "@mui/icons-material/ReplayOutlined";
+import { detectFace } from "../../../utils/firebase/appwrite.utils";
 
 const dummyData = [
   {
@@ -535,41 +536,76 @@ const FaceDetectionCard = () => {
   const setIsAlert = useFaceDetectionStore((state) => state.setIsAlert);
   const setIsAlertText = useFaceDetectionStore((state) => state.setIsAlertText);
 
-  const handleSubmit = () => {
-    if (inputURL) {
-      // setFaceResult(dummyData[0].data.regions);
-      // return;
+  // Express
+  // const handleSubmit = () => {
+  //   if (inputURL) {
+  //     // setFaceResult(dummyData[0].data.regions);
+  //     // return;
 
-      setIsLoading(true);
-      fetch("http://localhost:3000/image", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          input: inputURL,
-        }),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          setIsLoading(false);
-          setFaceResult(data.outputs[0].data.regions);
-        })
-        .catch((err) => {
-          setIsLoading(false);
-          setIsAlert(true);
-          if (err.message == "Failed to fetch") {
-            setIsAlertText(`We couldn’t reach our servers. Please try again in a moment.`);
-          } else {
-            setIsAlertText(`Unexpected error occurred. Something went wrong: ${err.message}`);
-          }
-          console.error(err);
-        });
-    } else {
+  //     setIsLoading(true);
+  //     fetch(import.meta.env.VITE_LOCAL_ENDPOINT, {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({
+  //         input: inputURL,
+  //       }),
+  //     })
+  //       .then((res) => res.json())
+  //       .then((data) => {
+  //         setIsLoading(false);
+  //         setFaceResult(data.outputs[0].data.regions);
+  //       })
+  //       .catch((err) => {
+  //         setIsLoading(false);
+  //         setIsAlert(true);
+  //         if (err.message == "Failed to fetch") {
+  //           setIsAlertText(`We couldn’t reach our servers. Please try again in a moment.`);
+  //         } else {
+  //           setIsAlertText(`Unexpected error occurred. Something went wrong: ${err.message}`);
+  //         }
+  //         console.error(err);
+  //       });
+  //   } else {
+  //     setIsAlert(true);
+  //     setIsAlertText(
+  //       "Paste an image URL or choose an example image to get started.",
+  //     );
+  //   }
+  // };
+
+  const handleSubmit = async () => {
+    if (!inputURL) {
       setIsAlert(true);
       setIsAlertText(
         "Paste an image URL or choose an example image to get started.",
       );
+      return;
+    }
+
+    setIsLoading(true);
+
+    try {
+      const data = await detectFace(inputURL);
+
+      setIsLoading(false);
+      setFaceResult(data?.outputs[0]?.data?.regions || []);
+    } catch (err) {
+      setIsLoading(false);
+      setIsAlert(true);
+
+      if (err.message === "Failed to fetch") {
+        setIsAlertText(
+          `We couldn't reach our servers. Please try again in a moment.`,
+        );
+      } else {
+        setIsAlertText(
+          `Unexpected error occurred. Something went wrong: ${err.message}`,
+        );
+      }
+
+      console.error(err);
     }
   };
 

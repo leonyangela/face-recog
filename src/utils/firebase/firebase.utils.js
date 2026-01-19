@@ -8,6 +8,8 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   updateProfile,
+  setPersistence,
+  browserSessionPersistence,
 } from "firebase/auth";
 
 import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
@@ -42,7 +44,7 @@ export const db = getFirestore();
 
 export const createUserDocFromAuth = async (
   userAuth,
-  additionalInformation = {}
+  additionalInformation = {},
 ) => {
   const userDocRef = doc(db, "users", userAuth.uid);
 
@@ -80,5 +82,7 @@ export const createUserWithEmailAndPass = async (email, password) => {
 
 export const signInWithEmailAndPass = async (email, password) => {
   if (!email || !password) return;
-  return await signInWithEmailAndPassword(auth, email, password);
+
+  await setPersistence(auth, browserSessionPersistence);
+  return signInWithEmailAndPassword(auth, email, password);
 };

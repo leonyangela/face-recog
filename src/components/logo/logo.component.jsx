@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router";
-import LogoIcon from "../../assets/images/face-scan.png";
 import FullscreenIcon from "@mui/icons-material/Fullscreen";
 
 const Logo = () => {
