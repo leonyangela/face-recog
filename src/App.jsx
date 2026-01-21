@@ -53,6 +53,15 @@ function App() {
           </ProtectedRoute>
         }
       />
+      
+      <Route
+        path="*"
+        element={
+          <ProtectedRoute>
+            <HomePages />
+          </ProtectedRoute>
+        }
+      />
     </Routes>
   );
 }
